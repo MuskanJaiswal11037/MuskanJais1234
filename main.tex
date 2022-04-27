@@ -1,0 +1,99 @@
+\documentclass[two column]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\renewcommand\thesection{\arabic{section}} 
+
+
+\title{ASSIGNMENT -2}
+\author{MUSKAN JAISWAL-cs21btech11037}
+\date{May 2022}
+
+\begin{document}
+
+\newcommand{\solution}{\noindent \textbf{solution}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\let\vec\mathbf
+\maketitle
+
+\textbf{Problem 1: } Using matrices,solve the following system of equations:-
+\begin{align*}
+2x-3y+5z=&11\\
+3x+2y-4z=&-5\\
+x+y-2z=&-3\\
+\end{align*}
+\textbf{Solution:-}  
+            \begin{enumerate}
+            \item
+            Three equations provided in the question are:-
+               \begin{align}
+                   2x-3y+5z=&11\\
+                   3x+2y-4z=&-5\\
+                   x+y-2z=&-3
+               \end{align}
+The above equations can be represented in the form:-
+                \begin{align}
+                 \vec{A}\vec{X}=&\vec{B}
+                 \end{align}
+                 where,
+                 \begin{align}
+                \vec{\vec{A}}=&\myvec{2 & -3 & 5\\ 3 & 2 & -4 \\1 & 1 & -2},
+                \vec{\vec{X}}=\myvec{x \\ y \\ z},    
+                     \vec{\vec{B}}=\myvec{11 \\ -5 \\ -3}\\
+                 So,  \vec{X}=&\vec{B}\vec{A}^{-1}\\
+                \vec{A}^{-1}=&\frac{adj\vec{A}}{\mydet{\vec{A}}}
+                 \end{align}
+                 \begin{multiline}
+                  \mydet{\vec{A}}=2\myvec{2&-4\\1&-2}+3\myvec{3&-4 \\1&-2}+ 5\myvec{3 & 2\\ 1 & 1}\\
+                  \mydet{\vec{A}}=2(-4+4) +3(-6+4)+5(3-2)\\
+                  =-6+5=-1
+                  \end{multiline}
+                  \begin{align}
+                   adj\vec{A}=\myvec{\vec{A_{11}} & \vec{A_{21}} & \vec{A_{31}}\\\vec{ A_{12}} & \vec{A_{22}} &\vec{A_{32}}\\ \vec{A_{13}} &\vec{A_{23}} & \vec{A_{33}}}
+                  \end{align}
+                  \begin{align}
+                      \vec{A_{11}}=&\mydet{2 & -4 \\ 1 & -2}\\
+                      \vec{A_{11}}=&-4+4=0\\
+                      \vec{A_{12}}=&-\mydet{3 & -4\\ 1 & -2}\\
+                      \vec{A_{12}}=&-(-6+4)=2\\
+                      \vec{A_{13}}=&\mydet{ 3 & 2 \\1&1}\\
+                      \vec{A_{13}}=&3-2=1\\
+                      \vec{A_{21}}=&-\mydet{-3 & 5 \\ 1 & -2}\\
+                      \vec{A_{21}}=&-(6-5)=-1\\
+                      \vec{A_{22}}=&\mydet{2 & 5 \\1 & -2}\\
+                      \vec{A_{22}}=&-4-5=-9\\
+                      \vec{A_{23}}=&-\mydet{2 & -3 \\ 1 & 1}\\
+                      \vec{A_{23}}=&-(2+3)=-5\\
+                      \vec{ A_{31}}=&\mydet{-3 & 5\\2 & -4}\\
+                      \vec{A_{31}}=&12-10=2\\
+                      \vec{A_{32}}=&-\mydet{2 & 5 \\ 3  &-4 }\\
+                      \vec{A_{32}}=&-(-8-15)=23\\
+                      \vec{A_{33}}=&\mydet{2 & -3 \\ 3 & 2}\\
+                      \vec{A_{33}}=&4+9=13\\
+                  \end{align}
+                    From equation 10,we get
+                    \begin{align}
+                    adj\vec{A}=&\myvec{0 & -1 & 2\\ 2 & -9 & 23 \\ 1 & -5 & 13}
+                    \end{align}
+                    From equation 9 , we get
+                    \begin{align}
+                    \vec{A}^{-1}=&\myvec{0 & 1 & -2 \\ -2 & 9 &-23 \\ -1 & 5 & -13}\\
+                    \end{align}
+                    From equation 8, we can say that
+                    \begin{align}
+                    \myvec{x\\y\\z}=&\myvec{0 & 1 & -2\\ -2& 9 & -23 \\ -1 & 5 & -13}\myvec{11\\-5\\-3}\\
+                    =&\myvec{6-5\\69-22-45\\39-11-25}\\
+                    =&\myvec{1\\2\\3}\\
+                    \implies  x=1, y=2 and z=3 \\
+                    \end{align}
+                     \end{enumerate}
+                     
+                     
+                    Solutions of the given equations are $x=1$,$y=2 $and $ z=3$. 
+                    
+                    
+                    
+\end{document}
